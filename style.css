@@ -371,6 +371,15 @@ p {
 .search-icon {
   font-size: 1.25rem;
   color: var(--color-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.search-icon:hover {
+  background: var(--color-gray-50);
+  transform: scale(1.1);
 }
 
 .global-search-input {

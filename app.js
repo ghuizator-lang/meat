@@ -581,20 +581,23 @@ window.showDailyAnswer = function() {
   }
 };
 
-// Global Search Functionality
-window.handleGlobalSearch = function(query) {
-  clearTimeout(searchTimeout);
+// Navigate to Search Page
+window.navigateToSearch = function() {
+  const searchInput = document.getElementById('global-search-input');
+  const query = searchInput.value.trim();
 
-  const resultsContainer = document.getElementById('global-search-results');
-
-  if (!query || query.trim().length < 2) {
-    resultsContainer.classList.remove('active');
-    return;
+  if (query) {
+    window.location.href = `search-page.html?q=${encodeURIComponent(query)}`;
+  } else {
+    window.location.href = 'search-page.html';
   }
+};
 
-  searchTimeout = setTimeout(() => {
-    performSearch(query.trim().toLowerCase());
-  }, 300);
+// Handle Enter key press in search input
+window.handleSearchKeyPress = function(event) {
+  if (event.key === 'Enter') {
+    navigateToSearch();
+  }
 };
 
 function performSearch(query) {

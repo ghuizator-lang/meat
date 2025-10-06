@@ -75,23 +75,20 @@
                     <div class="global-search-immersive fade-in-up" style="animation-delay: 0.8s">
                         <div class="search-container">
                             <div class="search-input-wrapper">
-                                <span class="search-icon">🔍</span>
+                                <span class="search-icon" onclick="navigateToSearch()">🔍</span>
                                 <input
                                     type="text"
                                     class="global-search-input"
                                     id="global-search-input"
                                     placeholder="Tìm kiếm kiến thức về thịt tươi..."
-                                    oninput="handleGlobalSearch(this.value)"
+                                    onkeypress="handleSearchKeyPress(event)"
                                 >
                             </div>
                             <div class="search-filters">
-                                <button class="search-filter-btn active" onclick="setSearchFilter('all')">Tất cả</button>
-                                <button class="search-filter-btn" onclick="setSearchFilter('blog')">📝 Blog</button>
-                                <button class="search-filter-btn" onclick="setSearchFilter('dictionary')">📖 Từ điển</button>
+                                <button class="search-filter-btn active">Tất cả</button>
+                                <button class="search-filter-btn">📝 Blog</button>
+                                <button class="search-filter-btn">📖 Từ điển</button>
                             </div>
-                        </div>
-                        <div class="search-results" id="global-search-results">
-                            <!-- Search results will be populated here -->
                         </div>
                     </div>
 
